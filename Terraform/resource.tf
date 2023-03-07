@@ -50,7 +50,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   admin_ssh_key {
     username   = "azureuser"
-    public_key = file("/home/practica2/AZ_practica2/Terraform/keys/azure.pub")
+    public_key = file("/home/practica2/keys/azure.pub")
   }
   
 	  os_disk {
