@@ -106,3 +106,20 @@ resource "azurerm_subnet_network_security_group_association" "jlgf_ssh" {
   subnet_id                 = azurerm_subnet.subnet.id
   network_security_group_id = azurerm_network_security_group.jlgf_ssh.id
 }
+
+resource "azurerm_storage_account" "jlgf" {
+  name                     = "storageaccount1"
+  resource_group_name      = azurerm_resource_group.jlgf.name
+  location                 = azurerm_resource_group.jlgf.location
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
+}
+
+resource "azurerm_container_registry" "jlgf" {
+  name                = "containerRegistry1"
+  resource_group_name = azurerm_resource_group.jlgf.name
+  location            = azurerm_resource_group.jlgf.location
+  sku                 = "Classic"
+  admin_enabled       = true
+  storage_account_id  = azurerm_storage_account.jlgf.id
+}
