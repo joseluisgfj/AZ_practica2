@@ -13,3 +13,7 @@ variable "network_name" {
 variable "subnet_name" {
   default = "subnet1"
 }
+
+variable "azurerm_storage_account" {
+  default = "azurerm_storage_account_acr"
+}
