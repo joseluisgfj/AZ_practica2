@@ -119,6 +119,6 @@ resource "azurerm_container_registry" "jlgf" {
   name                = "containerRegistry1"
   resource_group_name = azurerm_resource_group.jlgf.name
   location            = azurerm_resource_group.jlgf.location
-  sku                 = "Basic"
-  admin_enabled       = true
+  sku                 = "Premium"
+  admin_enabled       = false
 }
